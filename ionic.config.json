@@ -1,0 +1,7 @@
+{
+  "name": "maharaja_banquet",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

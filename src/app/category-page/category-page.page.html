@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{item.category}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{item.category}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-item *ngFor="let list of item.categoryList, let i = index" >
+  <ion-select [label]="list.itemName" placeholder="Make a Selection" (ionChange)="onItemSelect($event, list, i )"  >
+    <ion-select-option *ngFor="let qnt of getQuantityRange(list.quantity)"  [value]="qnt+1">{{qnt+1}}</ion-select-option>
+   
+  </ion-select>
+  
+</ion-item>
+ <ion-button expand="full">Add To Cart</ion-button>
+
+</ion-content>
